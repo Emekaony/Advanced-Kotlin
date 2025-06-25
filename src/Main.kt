@@ -12,8 +12,18 @@ fun main() {
     val task1 = Task("Build search feature")
     val task2 = Task("Add analytics")
 
+    val one = One(name = "Nnaemeka", age = 1)
+    val two = Two(name = "Nnaemeka", age = 1)
 
+    println(one == two)
+
+
+    println(NetworkConfig.baseUrl)
 }
+
+data class One(val name: String, val age: Int)
+data class Two(val name: String, val age: Int)
+
 
 fun getMessageFromDirection(direction: Direction): String {
     return when (direction) {

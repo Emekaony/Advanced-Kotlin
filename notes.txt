@@ -1,0 +1,3 @@
+1. Don't quite understand what singletons are, but we'll get there soon.
+2. Sealed classes are classes that allow you to have complex members/classes.
+3. Do not pollute the global namespace
