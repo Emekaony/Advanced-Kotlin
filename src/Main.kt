@@ -1,4 +1,4 @@
 fun main() {
-    val message = "Hello android developers"
-    println(message)
+    val person: Person = Student(22, firstName = "Nnaemeka", lastName = "Onyeokoro")
+    person.printName()
 }
