@@ -1,31 +1,26 @@
-import java.lang.StringBuilder
-
-interface StringProvider {
-    fun getID(id: Int): String
-}
-
-interface ResourceProvider: StringProvider {
-    fun getDimension(id: Int): Long
-}
-
-class DefaultStringProvider: ResourceProvider {
-
-    // just a simple class showing how interfaces work
-    override fun getDimension(id: Int): Long {
-        return 44
-    }
-
-    // now because we implement resource provider, and resource provider implements string provider
-    // we must also adhere to stringProviders contracts.
-    override fun getID(id: Int): String {
-        return "id: $id"
-    }
-}
-
 fun main() {
     val person: Person = Student(22, firstName = "Nnaemeka", lastName = "Onyeokoro")
     person.printName()
 
     val provider: StringProvider = DefaultStringProvider()
     println(provider.getID(22))
+
+    val direction = Direction.SOUTH
+    println(direction.ordinal)
+    println(getMessageFromDirection(direction))
+
+    val task1 = Task("Build search feature")
+    val task2 = Task("Add analytics")
+
+
+}
+
+fun getMessageFromDirection(direction: Direction): String {
+    return when (direction) {
+        // u do not need a return statement inside "when" clause
+        Direction.EAST -> "Going east bound"
+        Direction.WEST -> "Going west bound"
+        Direction.NORTH -> "Going North bound"
+        Direction.SOUTH -> "Going South bound"
+    }
 }
