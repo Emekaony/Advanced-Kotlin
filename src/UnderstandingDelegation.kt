@@ -12,7 +12,7 @@ private class GenericNoiseMaker(val word: String) : SoundBehavior {
     override fun makeSound() = println("Make some noise back there pls!!!")
 }
 
-private class UseDelegate(val person: String) : SoundBehavior by GenericNoiseMaker(person)
+private class UseDelegate(val person: String) : SoundBehavior by Afrobeats(person)
 
 fun main() {
     val song = Afrobeats(artist = "Wizkid")
